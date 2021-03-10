@@ -1,0 +1,15 @@
+n=1234
+p=0
+
+def dig_pow(n, p):
+    summ=0
+    list2=[]
+    list1=list(map(int, str(n)) )
+    l=len(list1)
+    for i in range(0,l):
+        #print(i)
+        list2.append(list1[i]**(p+i))
+        summ=summ+list2[i]
+    if summ%n ==0:
+        return summ/n
+    else: return -1
