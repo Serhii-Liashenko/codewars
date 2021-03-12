@@ -1,0 +1,26 @@
+```python
+
+def max_sequence(arr):
+    if arr==[]:
+        return 0
+    if max(arr)<0:
+        return 0
+    n = len(arr)
+
+    (k, l) = (0, 0)
+    s = None
+    t = 0
+    j = 0
+
+    for i in range(n):
+        t = t + arr[i]
+        if s is None or t > s:
+            (k, l) = (j, i)
+            s = t
+        if t < 0:
+            t = 0
+            j = i + 1
+
+    return sum(arr[k:l+1])
+    
+```
